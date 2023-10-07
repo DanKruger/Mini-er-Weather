@@ -38,6 +38,7 @@
             margin: 0px;
             width: 30%;
             .stat {
+                display: flex;
                 justify-content: center;
                 padding: 0px;
                 h4 {
