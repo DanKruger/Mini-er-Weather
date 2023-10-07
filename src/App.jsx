@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchData } from "./api/api";
-import "./App.css";
-
+import "./styles/App.css";
+import "./styles/responsive.css";
 import Weather from "./components/Weather";
 import Location from "./components/Location";
 

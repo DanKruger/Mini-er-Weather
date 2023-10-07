@@ -5,7 +5,7 @@ import { ReactComponent as WindIcon } from "./icons/wind-solid.svg";
 function Weather({ weatherData }) {
     return (
         <>
-            <div className="location">
+            <div id="location">
                 <div className="area">
                     <h1>{weatherData?.location?.name}</h1>
                     <h2>
@@ -29,7 +29,7 @@ function Weather({ weatherData }) {
                 <h2>Feels like {weatherData?.current.feelslike_c}°C</h2>
                 <h2>it's {weatherData.current.condition.text} today</h2>
             </span>
-            <div className="stats">
+            <div id="stats">
                 <span className="stat blur" id="wind">
                     <WindIcon />
                     <h4 className="stat_title">Wind</h4>
