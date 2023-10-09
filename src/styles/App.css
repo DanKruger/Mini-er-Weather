@@ -5,7 +5,7 @@
     --background-color: rgba(73, 73, 73, 0.4);
 }
 * {
-    transition: all 150ms;
+    transition: all 150ms ease-in-out;
     color: white;
     font-family: "Kulim Park", sans-serif;
 }
@@ -15,6 +15,14 @@ body {
 }
 #root {
     height: 100vh;
+}
+#loader {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .App {
     display: flex;
@@ -46,6 +54,10 @@ body {
             height: 3em;
             fill: white;
             /* mix-blend-mode: difference; */
+        }
+        svg:hover {
+            fill: aliceblue;
+            filter: drop-shadow(0px 0px 20px rgb(255, 255, 255));
         }
         h1 {
             margin: 0px;
@@ -105,27 +117,39 @@ body {
         display: flex;
         flex-direction: row;
         .location_input {
-            padding: 5px;
-            height: 20px;
+            padding: 10px;
+            height: 25px;
             border: 1px solid var(--border-color);
             background-color: var(--background-color);
             outline: none;
         }
         .location_button {
-            padding: 5px;
-            height: 32px;
+            padding: 10px;
+            height: 47px;
+            width: 47px;
             border: 1px solid var(--border-color);
             border-left: none;
             background-color: var(--background-color);
             outline: none;
+            svg {
+                height: 1.7em;
+                margin: auto;
+                fill: white;
+            }
         }
         .location_button:hover {
             background-color: rgba(0, 0, 0, 0.255);
             border-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            svg {
+                fill: rgb(136, 255, 112);
+            }
         }
-        .location_input:focus {
+        .location_input:focus,
+        .location_input:hover {
             background-color: rgba(0, 0, 0, 0.255);
             border: 1px solid rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
     }
 }
@@ -142,9 +166,9 @@ body {
 }
 
 .rBorder_left {
-    border-radius: 0.5em 0em 0em 0.5em;
+    border-radius: 1em 0em 0em 1em;
 }
 
 .rBorder_right {
-    border-radius: 0em 0.5em 0.5em 0em;
+    border-radius: 0em 1em 1em 0em;
 }

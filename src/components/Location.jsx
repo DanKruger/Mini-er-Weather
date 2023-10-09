@@ -1,18 +1,24 @@
-export default function Location({ getWeather, handleChange, errorMessage }) {
+import { ReactComponent as LocationPin } from "./icons/location-dot-solid.svg";
+export default function Location({
+    location,
+    getWeather,
+    handleChange,
+    errorMessage,
+}) {
     return (
         <div className="location_form">
             <h1>Please enter your location</h1>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    getWeather();
+                    getWeather(location);
                 }}
             >
                 <input
                     className="location_input rBorder_left blur"
                     type="text"
                     name="location_input"
-                    id="location"
+                    id="location_input"
                     // onBlur={(e) => {
                     //     handleChange(e.target.value);
                     // }}
@@ -22,14 +28,12 @@ export default function Location({ getWeather, handleChange, errorMessage }) {
                     }}
                 />
                 <button className="location_button rBorder_right blur">
-                    search
+                    <LocationPin />
                 </button>
             </form>
             {errorMessage ? (
                 <h1 className="block blur">{errorMessage}</h1>
-            ) : (
-                <p></p>
-            )}
+            ) : null}
         </div>
     );
 }
