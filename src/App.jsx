@@ -15,7 +15,9 @@ function App() {
     function getLocation() {
         if (navigator.geolocation) {
             setLoading(true);
-            navigator.geolocation.getCurrentPosition(success, error);
+            navigator.geolocation.getCurrentPosition(success, error, {
+                enableHighAccuracy: true,
+            });
         } else {
             setErrorMessage("Please enable location");
         }
@@ -29,7 +31,7 @@ function App() {
     }
 
     function error() {
-        setLoading(false)
+        setLoading(false);
         setErrorMessage("Please enable location");
     }
 
