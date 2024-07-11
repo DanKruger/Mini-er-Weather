@@ -1,7 +1,6 @@
 # Mini-er Weather
 
 This is a weather app.
-
 ## Currently
 
     - you have to enter your location manually but I will add gps location functionality at some point
